@@ -5,3 +5,6 @@ export const PATCH_POST = 'PATCH_POST';
 export const CREATE_POST = 'CREATE_POST';
 export const GET_ERROR = 'GET_ERRORS';
 export const SEND_MESSAGE = 'SEND_MESSAGE';
+export const USER_LOADING = 'USER_LOADING';
+export const USER_LOADED = 'USER_LOADED';
+export const AUTH_ERROR = 'AUTH_ERROR';
