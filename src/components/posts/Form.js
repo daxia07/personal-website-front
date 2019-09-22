@@ -4,11 +4,15 @@ import PropType from 'prop-types';
 import { createPost} from "../../actions/posts";
 
 class Form extends Component {
-    state = {
-        title: '',
-        content: '',
-        date_posted: ''
-    };
+    constructor(props) {
+        super(props);
+        this.state  = {
+            title: '',
+            content: '',
+            date_posted: ''
+        };
+    }
+
 
     static propTypes = {
         createPost: PropType.func.isRequired

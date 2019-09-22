@@ -1,5 +1,9 @@
-import axios from 'axios';
-import {GET_ERROR, USER_LOADED, USER_LOADING, AUTH_ERROR} from "./types";
+import {GET_ERROR, USER_LOADED, USER_LOADING, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL} from "./types";
+import API from "../API";
+import config from "../config";
+
+const myAPI = new API({url: config.url});
+myAPI.createEntity({ name : 'auth' });
 
 export const loadUser = () => (dispatch, getState) => {
     dispatch({
@@ -18,7 +22,7 @@ export const loadUser = () => (dispatch, getState) => {
         config.headers['Authorization'] = `Token ${token}`;
     }
 
-    axios.get('/api/auth/user', config).then(res => {
+    myAPI.endpoints.auth.get('/user', config).then(res => {
         dispatch({
             type: USER_LOADED,
             payload: res.data
@@ -37,3 +41,39 @@ export const loadUser = () => (dispatch, getState) => {
         })
     })
 };
+
+export const login = (username, password) => dispatch => {
+    dispatch({
+        type: USER_LOADING
+    });
+
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+
+    const body = JSON.stringify({username, password});
+
+    myAPI.endpoints.auth.post('/login', body, config).then(res => {
+        dispatch({
+            type: LOGIN_SUCCESS,
+            payload: res.data
+        });
+    }).catch(err => {
+        console.log(err)
+        // TODO: change this to details depending on occasion; receive the message
+        const errors = {
+            msg: 'login failed',
+            status: 404
+        };
+        dispatch({
+            type: GET_ERROR,
+            payload: errors
+        });
+        dispatch({
+            type: LOGIN_FAIL
+        })
+    })
+};
+

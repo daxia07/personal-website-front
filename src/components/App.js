@@ -4,8 +4,8 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import PrivateRoute from "./common/PrivateRoute";
 import Header from "./layout/Header";
 import Dashboard from "./posts/Dashboard";
-import Login from "../accounts/Login";
-import Register from "../accounts/Register";
+import Login from "./accounts/Login";
+import Register from "./accounts/Register";
 import {Provider as AlertProvider} from 'react-alert';
 import AlertTemplate from "react-alert-template-basic";
 import Alerts from "./layout/Alerts";

@@ -38,9 +38,9 @@ class API {
 
         const resourceURL = `${this.url}/${name}`;
 
-        endpoints.get = ( config={} ) => axios.get(resourceURL,  config);
+        endpoints.get = ( path, config={} ) => axios.get(`${resourceURL}${path}`,  config);
 
-        endpoints.post = ( config={} ) =>  axios.post(`${resourceURL}/`, config);
+        endpoints.post = ( path, body, config={} ) =>  axios.post(`${resourceURL}/${path}`, body, config);
 
         endpoints.getAll = ({ params={}}, config={} ) => axios.get(resourceURL, { params }, config);
 
