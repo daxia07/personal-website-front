@@ -20,12 +20,17 @@ class Register extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        const {password, password2} = this.state;
+        const {password, password2, username, email} = this.state;
         if (password !== password2) {
             //TODO: change it to the send message action
             console.log('password not match')
         } else {
-            this.props.register(this.state);
+            const newUser = {
+                username,
+                password,
+                email
+            }
+            this.props.register(newUser);
         }
     };
 

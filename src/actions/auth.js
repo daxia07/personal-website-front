@@ -137,7 +137,8 @@ export const register = ({username, password, email}) => dispatch => {
 
     const body = JSON.stringify({username, password, email});
 
-    myAPI.endpoints.auth.post('/register', body, config).then(res => {
+    myAPI.endpoints.auth.post('register', body, config).then(res => {
+        console.log(res)
         dispatch({
             type: REGISTER_SUCCESS,
             payload: res.data
