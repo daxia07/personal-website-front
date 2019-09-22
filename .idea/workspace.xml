@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a95d464b-9463-431b-bda5-61206380c3ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/accounts/Login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/accounts/Register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/PrivateRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API_test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/PrivateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/PrivateRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,8 +62,17 @@
       <option name="presentableId" value="Default" />
       <updated>1568964794092</updated>
       <workItem from="1568964795154" duration="157000" />
-      <workItem from="1569061858203" duration="6631000" />
+      <workItem from="1569061858203" duration="7008000" />
+      <workItem from="1569136809595" duration="2311000" />
     </task>
+    <task id="LOCAL-00001" summary="auth reducers and Private Route">
+      <created>1569069339918</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569069339918</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,22 +91,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/actions/auth.js</url>
-          <line>31</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/actions/auth.js</url>
-          <line>30</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="auth reducers and Private Route" />
+    <option name="LAST_COMMIT_MESSAGE" value="auth reducers and Private Route" />
   </component>
 </project>

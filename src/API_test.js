@@ -1,9 +1,8 @@
 import API from "./API";
-// import config from "./config";
+import config from "./config";
 
-// const myAPI = new API({url: config.url});
 
-const myAPI = new API({url: "http://localhost:8000/api"});
+const myAPI = new API({url: config.url});
 myAPI.createEntity({ name : 'posts' });
 
 
