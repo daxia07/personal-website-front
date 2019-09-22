@@ -10,7 +10,6 @@ class Alerts extends Component {
     };
 
     componentDidUpdate(prevProps) {
-        console.log('did update',this.props);
         const {error, alert, message} = this.props;
         // alert input error
         if (error !== prevProps.error) {

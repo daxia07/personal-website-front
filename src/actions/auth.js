@@ -1,4 +1,4 @@
-import {GET_ERROR, USER_LOADED, USER_LOADING, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL} from "./types";
+import {GET_ERROR, USER_LOADED, USER_LOADING, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS} from "./types";
 import API from "../API";
 import config from "../config";
 
@@ -76,4 +76,43 @@ export const login = (username, password) => dispatch => {
         })
     })
 };
+
+export const logout = () => (dispatch, getState) => {
+    dispatch({
+        type: USER_LOADING
+    });
+
+    const token = getState().authReducer.token;
+
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+
+    if(token) {
+        config.headers['Authorization'] = `Token ${token}`;
+    }
+
+    myAPI.endpoints.auth.post('/logout/', null, config).then(res => {
+        dispatch({
+            type: LOGOUT_SUCCESS,
+            payload: res.data
+        });
+    }).catch(err => {
+        //TODO: change error handling
+        const errors = {
+            msg: 'logout error',
+            status: 404
+        };
+        dispatch({
+            type: GET_ERROR,
+            payload: errors
+        });
+        dispatch({
+            type: AUTH_ERROR
+        })
+    })
+};
+
 
