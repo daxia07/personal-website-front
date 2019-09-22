@@ -1,7 +1,7 @@
 import API from "../API";
 
 import config from '../config';
-import {GET_POSTS, CREATE_POST, DELETE_POST, PATCH_POST, GET_ERROR, SEND_MESSAGE} from "./types";
+import {GET_POSTS, CREATE_POST, DELETE_POST, GET_ERROR, SEND_MESSAGE} from "./types";
 
 const myAPI = new API({url: config.url});
 myAPI.createEntity({ name : 'posts' });

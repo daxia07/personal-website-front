@@ -7,7 +7,7 @@ import {logout} from "../../actions/auth";
 class Header extends Component {
     static propTypes = {
         isAuthenticated: PropTypes.bool.isRequired,
-        user: PropTypes.string,
+        user: PropTypes.object.isRequired,
         logout: PropTypes.func.isRequired
     };
 
@@ -39,7 +39,7 @@ class Header extends Component {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarColor01">
-                    <a className="navbar-brand" href="#">Blog</a>
+                    <a className="navbar-brand" href="/">Blog</a>
                     { isAuthenticated? authLinks : guestLinks}
                 </div>
                 </div>

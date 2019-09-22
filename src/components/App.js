@@ -1,6 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import ReactDOM from 'react-dom';
-import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import PrivateRoute from "./common/PrivateRoute";
 import Header from "./layout/Header";
 import Dashboard from "./posts/Dashboard";
@@ -47,4 +46,4 @@ class App extends Component{
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default App;

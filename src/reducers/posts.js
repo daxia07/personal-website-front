@@ -1,4 +1,4 @@
-import { GET_POSTS, DELETE_POST, PATCH_POST, CREATE_POST } from '../actions/types.js'
+import { GET_POSTS, DELETE_POST, CREATE_POST } from '../actions/types.js'
 
 const initialState = {
     posts: []

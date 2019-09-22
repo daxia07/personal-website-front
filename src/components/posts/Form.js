@@ -27,7 +27,7 @@ class Form extends Component {
     onSubmit = e => {
         e.preventDefault();
         const {title, content} = this.state;
-        const date_posted = new Date;
+        const date_posted = new Date();
         const post = {title, content, date_posted};
         this.props.createPost(post);
         this.setState({

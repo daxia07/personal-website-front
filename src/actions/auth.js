@@ -64,7 +64,7 @@ export const login = (username, password) => dispatch => {
 
     const body = JSON.stringify({username, password});
 
-    myAPI.endpoints.auth.post('/login', body, config).then(res => {
+    myAPI.endpoints.auth.post('login', body, config).then(res => {
         dispatch({
             type: LOGIN_SUCCESS,
             payload: res.data
@@ -103,7 +103,7 @@ export const logout = () => (dispatch, getState) => {
         config.headers['Authorization'] = `Token ${token}`;
     }
 
-    myAPI.endpoints.auth.post('/logout/', null, config).then(res => {
+    myAPI.endpoints.auth.post('logout/', null, config).then(res => {
         dispatch({
             type: LOGOUT_SUCCESS,
             payload: res.data
