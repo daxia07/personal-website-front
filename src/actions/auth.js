@@ -21,15 +21,7 @@ export const loadUser = () => (dispatch, getState) => {
 
     const token = getState().authReducer.token;
 
-    const config = {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    };
-
-    if(token) {
-        config.headers['Authorization'] = `Token ${token}`;
-    }
+    const config = myAPI.getConfig(token);
 
     myAPI.endpoints.auth.get('/user', config).then(res => {
         dispatch({
@@ -70,7 +62,7 @@ export const login = (username, password) => dispatch => {
             payload: res.data
         });
     }).catch(err => {
-        console.log(err)
+        console.log(err);
         // TODO: change this to details depending on occasion; receive the message
         const errors = {
             msg: 'login failed',
@@ -91,17 +83,7 @@ export const logout = () => (dispatch, getState) => {
         type: USER_LOADING
     });
 
-    const token = getState().authReducer.token;
-
-    const config = {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    };
-
-    if(token) {
-        config.headers['Authorization'] = `Token ${token}`;
-    }
+    const config = myAPI.getConfig(getState().authReducer.token)
 
     myAPI.endpoints.auth.post('logout/', null, config).then(res => {
         dispatch({

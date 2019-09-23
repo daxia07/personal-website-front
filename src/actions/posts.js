@@ -6,8 +6,9 @@ import {GET_POSTS, CREATE_POST, DELETE_POST, GET_ERROR, SEND_MESSAGE} from "./ty
 const myAPI = new API({url: config.url});
 myAPI.createEntity({ name : 'posts' });
 
-export const getPosts = () => dispatch => {
-    myAPI.endpoints.posts.getAll('').then(res => {
+export const getPosts = () => (dispatch, getState) => {
+    const config = myAPI.getConfig(getState().authReducer.token);
+    myAPI.endpoints.posts.getAll(config).then(res => {
         console.log('get posts', res);
         dispatch({
             type: GET_POSTS,
@@ -29,8 +30,9 @@ export const getPosts = () => dispatch => {
     })
 };
 
-export const deletePost = id => dispatch => {
-    myAPI.endpoints.posts.delete({id: id}).then(res => {
+export const deletePost = id => (dispatch, getState) => {
+    const config = myAPI.getConfig(getState().authReducer.token);
+    myAPI.endpoints.posts.delete({id: id}, config).then(res => {
         dispatch({
             type: DELETE_POST,
             payload: id
@@ -42,8 +44,10 @@ export const deletePost = id => dispatch => {
     }).catch(err => console.log(err))
 };
 
-export const createPost = post => dispatch => {
-    myAPI.endpoints.posts.create(post).then(res => {
+export const createPost = post => (dispatch, getState) => {
+    const config = myAPI.getConfig(getState().authReducer.token);
+    console.log(config)
+    myAPI.endpoints.posts.create(post, config).then(res => {
         dispatch({
             type: CREATE_POST,
             payload: res.data

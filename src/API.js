@@ -13,6 +13,21 @@ class API {
      * Create and store a single entity's endpoints
      * @param {A entity Object} entity
      */
+    getConfig(token) {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        };
+
+        if(token) {
+            config.headers['Authorization'] = `Token ${token}`;
+        }
+        return config
+    }
+
+
+
     createEntity(entity) {
         /**
          * If there is a - in the entity.name, then change it
@@ -42,7 +57,7 @@ class API {
 
         endpoints.post = ( path, body, config={} ) =>  axios.post(`${resourceURL}/${path}`, body, config);
 
-        endpoints.getAll = ({ params={}}, config={} ) => axios.get(resourceURL, { params }, config);
+        endpoints.getAll = (config={} ) => axios.get(resourceURL, config);
 
         endpoints.getOne = ({ id }, config={}) =>  axios.get(`${resourceURL}/${id}`, config);
 

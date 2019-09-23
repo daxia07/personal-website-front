@@ -12,6 +12,7 @@ class Header extends Component {
     };
 
     render() {
+        console.log(this.props);
         const {isAuthenticated, user} = this.props;
         const authLinks = (
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
