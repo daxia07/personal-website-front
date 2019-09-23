@@ -16,7 +16,6 @@ export const getPosts = () => (dispatch, getState) => {
         })
     }).catch(err => {
         console.log(err);
-        console.log(err);
         //TODO: delay to show the message
         // const errors = {
         //     msg: err.response.data,

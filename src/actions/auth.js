@@ -79,13 +79,10 @@ export const login = (username, password) => dispatch => {
 };
 
 export const logout = () => (dispatch, getState) => {
-    dispatch({
-        type: USER_LOADING
-    });
-
     const config = myAPI.getConfig(getState().authReducer.token)
 
     myAPI.endpoints.auth.post('logout/', null, config).then(res => {
+        console.log(res);
         dispatch({
             type: LOGOUT_SUCCESS,
             payload: res.data

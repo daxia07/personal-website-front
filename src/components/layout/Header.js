@@ -11,18 +11,13 @@ class Header extends Component {
         logout: PropTypes.func.isRequired
     };
 
-    onLogout = e => {
-        e.preventDefault();
-        this.props.logout();
-    };
-
     render() {
         const {isAuthenticated, user} = this.props;
         const authLinks = (
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                 <span className="navbar-text mr-3"><strong>{user? `Welcome ${user.username}`:''}</strong></span>
                 <li className="nav-item">
-                    <button onClick={this.onLogout} className="nav-link btn btn-info btn-sm text-light">Logout</button>
+                    <button onClick={this.props.logout} className="nav-link btn btn-info btn-sm text-light">Logout</button>
                 </li>
             </ul>
         );
