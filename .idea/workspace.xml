@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a95d464b-9463-431b-bda5-61206380c3ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/posts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/auth.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +63,8 @@
       <workItem from="1568964795154" duration="157000" />
       <workItem from="1569061858203" duration="7008000" />
       <workItem from="1569136809595" duration="6334000" />
-      <workItem from="1569191456120" duration="4354000" />
+      <workItem from="1569191456120" duration="4500000" />
+      <workItem from="1569201469777" duration="1355000" />
     </task>
     <task id="LOCAL-00001" summary="auth reducers and Private Route">
       <created>1569069339918</created>
@@ -146,15 +146,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/actions/posts.js</url>
-          <line>48</line>
-          <properties lambdaOrdinal="-1" />
+          <line>50</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/layout/Header.js</url>
-          <line>15</line>
+          <url>file://$PROJECT_DIR$/src/actions/posts.js</url>
+          <line>17</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="18" />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/actions/posts.js</url>
+          <line>18</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/actions/posts.js</url>
+          <line>52</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/common/PrivateRoute.js</url>
+          <line>10</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

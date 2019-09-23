@@ -15,18 +15,20 @@ export const getPosts = () => (dispatch, getState) => {
             payload: res.data
         })
     }).catch(err => {
+        console.log(err);
+        console.log(err);
         //TODO: delay to show the message
-        const errors = {
-            msg: err.response.data,
-            status: err.response.status
-        };
-        dispatch({
-            type: GET_ERROR,
-            payload: errors
-        });
-        if (err.response.status === 403) {
-            // TODO: dispatch login action
-        }
+        // const errors = {
+        //     msg: err.response.data,
+        //     status: err.response.status
+        // };
+        // dispatch({
+        //     type: GET_ERROR,
+        //     payload: errors
+        // });
+        // if (err.response.status === 403) {
+        //     // TODO: dispatch login action
+        // }
     })
 };
 
@@ -46,8 +48,9 @@ export const deletePost = id => (dispatch, getState) => {
 
 export const createPost = post => (dispatch, getState) => {
     const config = myAPI.getConfig(getState().authReducer.token);
-    console.log(config)
+    console.log(config);
     myAPI.endpoints.posts.create(post, config).then(res => {
+        console.log(res);
         dispatch({
             type: CREATE_POST,
             payload: res.data
